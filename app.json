@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "clik-and-grab",
+    "name": "clik and grab",
     "slug": "clik-and-grab",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -32,6 +32,12 @@
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
+        }
+      ],
+      [
+        "expo-font",
+        {
+          "fonts": ["./assets/fonts/LibertinusSans-Regular.ttf","./assets/fonts/PlaywritePL-Regular.ttf"]
         }
       ]
     ],

@@ -42,9 +42,13 @@ import salad from '@/assets/images/salad.png';
 import success from '@/assets/images/success.png';
 import tomatoes from '@/assets/images/tomatoes.png';
 
+import { offerType } from './types';
+
+
 // fonts 
-const libSans = require('@/assets/fonts/LibertinusSans-Regular.ttf')
+const libsans = require('@/assets/fonts/LibertinusSans-Regular.ttf');
 const playwrite = require('@/assets/fonts/PlaywritePL-Regular.ttf');
+const libsansBold = require('@/assets/fonts/LibertinusSans-Bold.ttf');
 
 const images = {
     avatar,
@@ -93,8 +97,38 @@ export const icons = {
 }
 
 export const fonts = {
-    libSans,
-    playwrite
+    libsans,
+    playwrite,
+    libsansBold
 }
+
+
+export const offers:offerType[] = [
+    {
+        id: 1,
+        title: "SUMMER COMBO",
+        image: burgerOne,
+        color: "#D33B0D",
+    },
+    {
+        id: 2,
+        title: "BURGER BASH",
+        image: burgerTwo,
+        color: "#DF5A0C",
+    },
+    {
+        id: 3,
+        title: "PIZZA PARTY",
+        image: pizza,
+        color: "#084137",
+    },
+    {
+        id: 4,
+        title: "BURRITO DELIGHT",
+        image: buritto,
+        color: "#EB920C",
+    },
+];
+
 
 export default images

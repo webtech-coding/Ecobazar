@@ -3,14 +3,15 @@ import { Stack } from "expo-router";
 import * as SplashScreen from 'expo-splash-screen';
 
 import { useEffect } from 'react';
-import { fonts } from "./constants";
+import { fonts } from '../utils/constants.ts';
 import './global.css';
 
 const RootLayout=()=> {
 
   const [loaded, error] = useFonts({
-    libsans: require('./../assets/fonts/LibertinusSans-Regular.ttf'),
-    playwrite:fonts.playwrite
+    libsans: fonts.libsans,
+    playwrite:fonts.playwrite,
+    'libsans-bold':fonts.libsansBold
   })
 
   useEffect(()=>{
@@ -21,7 +22,7 @@ const RootLayout=()=> {
     }
   },[loaded, error])
 
-  return <Stack />;
+  return <Stack screenOptions={{headerShown:false}}/>;
 }
 
 export default RootLayout
