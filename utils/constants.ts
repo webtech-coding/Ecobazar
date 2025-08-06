@@ -33,6 +33,7 @@ import cucumber from '@/assets/images/cucumber.png';
 import emptyState from '@/assets/images/empty-state.png';
 import fries from '@/assets/images/fries.png';
 import login from '@/assets/images/login-graphic.png';
+import logo from '@/assets/images/logo.png';
 import mozarella from '@/assets/images/mozarella-sticks.png';
 import mushrooms from '@/assets/images/mushrooms.png';
 import onionRing from '@/assets/images/onion-rings.png';
@@ -70,7 +71,8 @@ const images = {
     pizza,
     salad,
     success,
-    tomatoes
+    tomatoes,
+    logo
 }
 
 export const icons = {
