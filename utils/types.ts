@@ -23,3 +23,9 @@ export type ButtonTypeProps ={
     text:string,
     onPress: ()=>void
 }
+
+export interface IUser{
+    name:string,
+    email:string,
+    avatar?:string
+}

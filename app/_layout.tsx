@@ -1,7 +1,12 @@
+import { store } from '@/store';
 import { useFonts } from 'expo-font';
 import { Stack } from "expo-router";
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
+
+
+import { Provider } from 'react-redux';
+
 
 import './global.css';
 
@@ -20,9 +25,13 @@ const RootLayout=()=> {
     }
   },[loaded, error])
 
-  return <Stack 
-    screenOptions={{headerShown:false}} 
-  />;
+  return(
+    <Provider store={store}>
+      <Stack 
+        screenOptions={{headerShown:false}} 
+      />
+    </Provider>
+  )
 }
 
 export default RootLayout

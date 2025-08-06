@@ -1,3 +1,4 @@
+import { IUser } from '@/utils/types';
 import { Account, Avatars, Client, Databases, ID } from 'react-native-appwrite';
 
 export const appWriteConfig = {
@@ -71,5 +72,19 @@ export const signInUser = async (email:string, password:string)=>{
     }
 }
 
+export const getUserSession = async ():Promise<IUser>=>{
+    try {
+        const session = await account.get();
+        console.log(session)
+        if(!session)throw Error
+     
+
+        return session
+
+    } catch (error:any) {
+        throw new Error(error.message)
+    }
+  
+}
 
             
