@@ -25,7 +25,7 @@ const avatars = new Avatars(client);
 export const createUser = async (email:string, password:string, name:string)=>{
     try {
         const userAccount = await account.create(ID.unique(), email, password, name)
-        console.log(userAccount)
+
         if(!userAccount)throw Error;
         
         await saveUserData(email, name, userAccount.$id)
@@ -75,10 +75,8 @@ export const signInUser = async (email:string, password:string)=>{
 export const getUserSession = async ():Promise<IUser>=>{
     try {
         const session = await account.get();
-        console.log(session)
         if(!session)throw Error
      
-
         return session
 
     } catch (error:any) {

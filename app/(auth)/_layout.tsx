@@ -1,9 +1,15 @@
+import { RootState } from "@/store";
 import images from "@/utils/constants";
-import { Slot } from "expo-router";
+import { Redirect, Slot } from "expo-router";
 import { Image, ImageBackground, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useSelector } from "react-redux";
 
 const AuthLayout=()=>{
+    const user = useSelector((state:RootState)=>state.user);
+    console.log(user)
+    if(user.isAuthenticated && !user.isLoading)return <Redirect href="/" />
+
     return(
         <SafeAreaView>
             <ScrollView>

@@ -1,12 +1,25 @@
 import FormButton from "@/components/formButton";
 import FormInput from "@/components/formInput";
+import { signInUser } from "@/lib/appwrite";
+import { AppDispatch, RootState } from "@/store";
+import { fetchUserSession } from "@/store/asyncActions/userActions";
 import { useRouter } from "expo-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Alert, KeyboardAvoidingView, Text, TouchableOpacity, View } from "react-native";
+import { useDispatch, useSelector } from "react-redux";
 
 const Signin =()=>{
+
     const [formInput, setFormInput] = useState<{email:string, password:string}>({email:'', password:''}) 
+
+    const dispatch = useDispatch<AppDispatch>();
+    const user = useSelector((state:RootState)=>state.user);
     const router = useRouter()
+
+    useEffect(()=>{
+        if(user.isLoading)return
+        if(user.isAuthenticated)router.navigate('/');
+    },[user])
 
     /** save form data when input change */
     const handleFormInput=(value:string, type:string)=>{
@@ -21,8 +34,20 @@ const Signin =()=>{
     }
 
     /** handle form submission */
-    const handleFormSubmission =()=>{
-        Alert.alert('handling the form submission')
+    const handleFormSubmission =async ()=>{
+
+        const {email, password} = formInput
+        try {
+            const signInSuccess =await signInUser(email, password);
+            if(!signInSuccess){
+                Alert.alert('Unable to sing in.')
+            }else{
+                dispatch(fetchUserSession());        
+            }
+        } catch (error:any) {
+            Alert.alert(error.message)
+        }
+        
         router.navigate('/')
     }
 

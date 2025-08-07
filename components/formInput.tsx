@@ -9,7 +9,7 @@ const FormInput:FC<InputTypePorps> =({placeholder, inputType, value, onInputChan
             <Text className="font-semibold capitalize">{inputType}:</Text>
             <TextInput 
                 placeholder={placeholder}
-                autoComplete="email"
+                autoComplete="off"
                 secureTextEntry={inputType ==="password"}
                 keyboardType={inputType ==="email" ? "email-address":"default"}
                 onFocus={()=>setIsFocused(true)}

@@ -29,3 +29,9 @@ export interface IUser{
     email:string,
     avatar?:string
 }
+
+export type TabrBarIconPropsType={
+    focused:boolean,
+    icon:'home'|'bag'| 'person' | 'search',
+    title:string
+}
