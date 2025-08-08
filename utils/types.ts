@@ -1,3 +1,4 @@
+import { ImageSourcePropType } from "react-native"
 
 export type offerType = {
     id:number,
@@ -27,7 +28,23 @@ export type ButtonTypeProps ={
 export interface IUser{
     name:string,
     email:string,
-    avatar?:string
+    avatar?:string,
+}
+
+export interface ICategory{
+    name:string,
+    icon:ImageSourcePropType,
+    id:number
+}
+
+export interface IProduct extends ICategory{
+    price:number,
+    rating:number    
+}
+
+export type TopSalesPropsType={
+    product:IProduct,
+    index:number
 }
 
 export type TabrBarIconPropsType={

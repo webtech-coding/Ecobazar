@@ -1,5 +1,5 @@
 import { IUser } from '@/utils/types';
-import { Account, Avatars, Client, Databases, ID } from 'react-native-appwrite';
+import { Account, Avatars, Client, Databases, ID, Query } from 'react-native-appwrite';
 
 export const appWriteConfig = {
     projectId: process.env.EXPO_PUBLIC_APPWRITE_PROJECT_ID!,
@@ -76,13 +76,23 @@ export const getUserSession = async ():Promise<IUser>=>{
     try {
         const session = await account.get();
         if(!session)throw Error
-     
-        return session
+        const userData = await databases.listDocuments(appWriteConfig.databaseId, appWriteConfig.userCollectionId, [Query.equal('email', [session.email])])
+        const userAvatar =userData.documents[0].avatar
+        return {...session, avatar:userAvatar}
 
     } catch (error:any) {
         throw new Error(error.message)
+    }  
+}
+
+
+export const deleteUserSession =async():Promise<{}>=>{
+    try {
+        const sessionEnd = await account.deleteSession('current')
+        return sessionEnd
+    } catch (error:any) {
+        throw new Error(error.message)
     }
-  
 }
 
             

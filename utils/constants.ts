@@ -14,6 +14,7 @@ import minus from '@/assets/icons/minus.png';
 import pencil from '@/assets/icons/pencil.png';
 import person from '@/assets/icons/person.png';
 import phone from '@/assets/icons/phone.png';
+import plantLogo from '@/assets/icons/plant-logo.png';
 import plush from '@/assets/icons/plus.png';
 import search from '@/assets/icons/search.png';
 import star from '@/assets/icons/star.png';
@@ -21,9 +22,11 @@ import trash from '@/assets/icons/trash.png';
 import user from '@/assets/icons/user.png';
 
 // images
+import fruitBg from '@/assets/images/Image_fruits_bg.png';
 import avatar from '@/assets/images/avatar.png';
 import avacado from '@/assets/images/avocado.png';
 import bacon from '@/assets/images/bacon.png';
+import bannerBg from '@/assets/images/bannerBg.png';
 import burgerOne from '@/assets/images/burger-one.png';
 import burgerTwo from '@/assets/images/burger-two.png';
 import buritto from '@/assets/images/buritto.png';
@@ -42,6 +45,26 @@ import pizza from '@/assets/images/pizza-one.png';
 import salad from '@/assets/images/salad.png';
 import success from '@/assets/images/success.png';
 import tomatoes from '@/assets/images/tomatoes.png';
+import tomatoesBg from '@/assets/images/tomatoesBG.jpg';
+
+//images -vegetables
+import beauty from '@/assets/images/beauty.png';
+import beverages from '@/assets/images/beverages.png';
+import breakery from '@/assets/images/breakery.png';
+import detergents from '@/assets/images/detergents.png';
+import fruits from '@/assets/images/fruits.png';
+import meat from '@/assets/images/meat.png';
+import snacks from '@/assets/images/snacks.png';
+import vegetable from '@/assets/images/vegetables.png';
+
+//fetaured -vegeatables
+import pepper from '@/assets/images/featured/Product_2.png';
+import cauliflower from '@/assets/images/featured/Product_3.png';
+import bringle from '@/assets/images/featured/Product_4.png';
+import lettuce from '@/assets/images/featured/Product_5.png';
+import cabbage from '@/assets/images/featured/Product_6.png';
+import chilli from '@/assets/images/featured/product_1.png';
+
 
 import { offerType } from './types';
 
@@ -72,8 +95,18 @@ const images = {
     salad,
     success,
     tomatoes,
-    logo
-}
+    logo,
+    fruitBg,
+    bannerBg,
+    tomatoesBg,
+
+    chilli,
+    pepper,
+    cauliflower,
+    cabbage,
+    bringle,
+    lettuce
+}   
 
 export const icons = {
     arrowBack,
@@ -95,7 +128,8 @@ export const icons = {
     search,
     star,
     trash,
-    user
+    user,
+    plantLogo
 }
 
 export const fonts = {
@@ -131,6 +165,89 @@ export const offers:offerType[] = [
         color: "#EB920C",
     },
 ];
+
+export const categories = [
+    {
+       id:1,
+       name: 'Fruist',
+       icon:fruits,
+       products:[]
+    },
+    {
+        id:2,
+        name:'Vegetables',
+        icon:vegetable,
+        prodcuts:[]
+    },
+    {
+        id:3,
+        name:'Meat and Fish',
+        icon:meat,
+        prodcuts:[]
+    },
+    {
+        id:4,
+        name:'Snacks',
+        icon:snacks,
+        prodcuts:[]
+    },
+    {
+        id:5,
+        name:'Beverages',
+        icon:beverages,
+        prodcuts:[]
+    },
+    {
+        id:6,
+        name:'Beauty & Health',
+        icon:beauty,
+        prodcuts:[]
+    },
+    {
+        id:7,
+        name:'Bread and Brakery',
+        icon:breakery,
+        prodcuts:[]
+    },
+    {
+        id:8,
+        name:'Detergents',
+        icon:detergents,
+        prodcuts:[]
+    },
+]
+
+export const deals =[
+    {
+        id:11,
+        name:'Chinese cabbage',
+        icon:cabbage,
+        price:12,
+        rating:4  
+    },
+    {
+        id:12,
+        name:'Green Lettuce',
+        icon:lettuce,      
+        price:9,
+        rating:5
+    },
+    {
+        id:13,
+        name:'Egg plant',
+        icon:bringle,      
+        price:4.5,
+        rating:5
+    },
+    {
+        id:14,
+        name:'Fresh Cauliflower',
+        icon:cauliflower,      
+        price:2,
+        rating:4
+    }
+
+]
 
 
 export default images

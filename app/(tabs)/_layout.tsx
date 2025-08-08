@@ -34,6 +34,7 @@ const TabLayout =()=>{
                 margin:'auto',
                 maxWidth:'100%',
                 borderColor:"#ffffff",
+                
                 shadowColor:"#202020",
                 shadowOffset:{width:10, height:20},
                 shadowRadius:.2,

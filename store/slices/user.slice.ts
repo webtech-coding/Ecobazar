@@ -1,6 +1,6 @@
 import { IUser } from "@/utils/types"
 import { PayloadAction, createSlice } from "@reduxjs/toolkit"
-import { fetchUserSession } from "../asyncActions/userActions"
+import { fetchUserSession, singoutUser } from "../asyncActions/userActions"
 
 type initialStateType={
     user:IUser | null,
@@ -45,6 +45,13 @@ export const userSlice = createSlice({
             state.isLoading = false
             state.isAuthenticated = false
             state.user = null
+        })
+        .addCase(singoutUser.fulfilled, (state)=>{
+            state.isAuthenticated = false
+            state.user = null            
+        })
+        .addCase(singoutUser.rejected, (state)=>{
+            
         })
     }
 })
