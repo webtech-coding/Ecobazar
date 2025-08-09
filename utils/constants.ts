@@ -21,6 +21,7 @@ import star from '@/assets/icons/star.png';
 import trash from '@/assets/icons/trash.png';
 import user from '@/assets/icons/user.png';
 
+
 // images
 import fruitBg from '@/assets/images/Image_fruits_bg.png';
 import avatar from '@/assets/images/avatar.png';
@@ -33,6 +34,8 @@ import buritto from '@/assets/images/buritto.png';
 import cheese from '@/assets/images/cheese.png';
 import coleslaw from '@/assets/images/coleslaw.png';
 import cucumber from '@/assets/images/cucumber.png';
+import delivery from '@/assets/images/deliveryTruck.png';
+import egg from '@/assets/images/eggBg.png';
 import emptyState from '@/assets/images/empty-state.png';
 import fries from '@/assets/images/fries.png';
 import login from '@/assets/images/login-graphic.png';
@@ -52,6 +55,7 @@ import beauty from '@/assets/images/beauty.png';
 import beverages from '@/assets/images/beverages.png';
 import breakery from '@/assets/images/breakery.png';
 import detergents from '@/assets/images/detergents.png';
+import discountBanner from '@/assets/images/discount-banner.png';
 import fruits from '@/assets/images/fruits.png';
 import meat from '@/assets/images/meat.png';
 import snacks from '@/assets/images/snacks.png';
@@ -99,13 +103,15 @@ const images = {
     fruitBg,
     bannerBg,
     tomatoesBg,
-
+    discountBanner,
+    delivery,
     chilli,
     pepper,
     cauliflower,
     cabbage,
     bringle,
-    lettuce
+    lettuce,
+    egg
 }   
 
 export const icons = {
