@@ -5,10 +5,10 @@ import { Image, Pressable, Text, View } from "react-native"
 
 const TopSales:FC<TopSalesPropsType> =({product, index}):ReactElement=>{
     return(
-        <Pressable className={`w-[100%] justify-center items-center bg-[#ffffff] mb-5 rounded-lg`}>
-            <View className="w-full items-center">
-                <Image source={product.icon} className="size-60" resizeMode="contain"/>  
-                <View className="pb-2 flex-row w-full justify-between pl-2 pr-2">
+        <Pressable className={`w-[48%] h-80 justify-end items-center mb-5 bg-[#ffffff] rounded-lg ${index % 2 ?'ml-2':'mr-2'}`}>
+            <View className="w-full justify-center">
+                <Image source={product.icon} className="size- w-full" resizeMode="contain"/>  
+                <View className="pb-5 flex-row w-full justify-between pl-2 pr-2">
                     <View>
                         <Text>{product.name}</Text>
                         <Text className="font-bold">€{product.price.toFixed(2)}</Text>
@@ -26,9 +26,8 @@ const TopSales:FC<TopSalesPropsType> =({product, index}):ReactElement=>{
                             }
                         </View>
                     </View>
-                    <View className="flex-row justify-center items-center bg-primary p-2 rounded-md">
-                        <Image source={icons.bag} tintColor="#ffffff" resizeMode="cover" className="size-6"/>
-                        <Text className="text-white-100 pl-2">Add to cart</Text>
+                    <View className="flex-row justify-center items-center p-2 rounded-md">
+                        <Image source={icons.bag} tintColor="#202020" resizeMode="cover" className="size-6"/>                        
                     </View>                  
                 </View>              
             </View>     

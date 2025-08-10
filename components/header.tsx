@@ -3,7 +3,7 @@ import { Image, Text, TouchableOpacity, View } from "react-native";
 
 const Header =()=>{
     return(
-        <View>
+        <View className="border-b border-[#ebe9e9]">
             <View className="flex-row justify-between p-3">
                 <View className="flex-row items-center">
                     <Image source={icons.plantLogo} className="size-6 mr-1"/>
@@ -16,11 +16,11 @@ const Header =()=>{
                             <Text className="text-white">0</Text>
                         </View>
                     </View>    
-                    <Text className=" mr-5 ml-2">|</Text>         
-                    <Image source={icons.person} tintColor="#202020" className="size-6" />
-                    <TouchableOpacity className="bg-primary pr-2 pl-2 pt-1 pb-1 rounded-md ml-2" >
-                        <Text className="text-sm text-white-100 font-medium">
-                            Signin
+                    <Text className=" mr-5 ml-2">|</Text>  
+                    <TouchableOpacity className="flex-row items-center bg-primary pr-2 pl-2 pt-1 pb-1 rounded-md ml-2" >
+                    <Image source={icons.person} tintColor="#ffffff" className="size-4" />
+                        <Text className="text-sm text-white-100 font-medium ml-2">
+                            Sign out
                         </Text>
                     </TouchableOpacity>
                 </View>                
