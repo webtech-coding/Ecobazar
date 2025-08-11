@@ -18,7 +18,7 @@ const TopSales:FC<TopSalesPropsType> =({product, index}):ReactElement=>{
                                     return [1,2,3,4,5].map(num=>{
                                         return(
                                             <View>
-                                                <Image source={icons.star} className="size-4" tintColor={num<=product.rating ?'#FE8C00':'#cccccc'}/>
+                                                <Image source={icons.star} key={`start-${num}`} className="size-4" tintColor={num<=product.rating ?'#FE8C00':'#cccccc'}/>
                                             </View>
                                         )
                                     })
