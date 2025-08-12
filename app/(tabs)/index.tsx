@@ -7,6 +7,7 @@ import TopSales from "@/components/topSales";
 import { RootState } from "@/store";
 import images, { categories, deals, icons } from "@/utils/constants";
 import { ICategory, IProduct } from "@/utils/types";
+import { useRouter } from "expo-router";
 import { Image, ScrollView, Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { useSelector } from "react-redux";
@@ -16,6 +17,7 @@ import { useSelector } from "react-redux";
 export default function Index() {
 
   const userStore = useSelector((state:RootState)=>state.user);
+  const router = useRouter();
 
   type ItemTypes = ICategory | IProduct;
   type dataTypes = {
@@ -53,14 +55,15 @@ export default function Index() {
                 categories.map(category=>(<CategoryCard  category={category} key={category.name}/>))
               }          
           </ScrollView>
-          <View className="mt-8 mb-8">
-            <Text className="font-semibold text-xl mb-[10]"> Top sold products </Text>
-            <View className="flex-row flex-wrap pl-[10] pr-[10]">
-              {
-                deals.map((deal, index)=>(<TopSales key={deal.name} index={index} product={deal}></TopSales>))
-              }
+            <View className="mt-8 mb-8">
+              <Text className="font-semibold text-xl mb-[10] pl-[10]"> Top products </Text>
+              <View className="flex-row flex-wrap pl-[10] pr-[10]">
+                {
+                  deals.map((deal, index)=>(<TopSales key={deal.name} index={index} product={deal}></TopSales>))
+                }
+              </View>
             </View>
-          </View>
+          
           <View className="mt-2 items-center bg-[#eae2b7] p-5">
             <View className="h-40 w-40 border-primary border-2 rounded-full justify-center items-center">
               <Image source={images.delivery} className="h-16 w-16 size-10" resizeMode="contain"/>

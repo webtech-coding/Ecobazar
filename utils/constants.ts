@@ -229,28 +229,52 @@ export const deals =[
         name:'Chinese cabbage',
         icon:cabbage,
         price:12,
-        rating:4  
+        rating:4,
+        description:`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
     },
     {
         id:12,
         name:'Green Lettuce',
         icon:lettuce,      
         price:9,
-        rating:5
+        rating:5,
+        description:`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
     },
     {
         id:13,
         name:'Egg plant',
         icon:bringle,      
         price:4.5,
-        rating:5
+        rating:5,
+        description:`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
+
     },
     {
         id:14,
         name:'Fresh Cauliflower',
         icon:cauliflower,      
         price:2,
-        rating:4
+        rating:4,
+        description:`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
+
+    },
+    {
+        id:15,
+        name:'Fresh Pepper',
+        icon:pepper,      
+        price:2,
+        rating:4,
+        description:`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
+
+    },
+    {
+        id:16,
+        name:'Chilli',
+        icon:chilli,      
+        price:2,
+        rating:4,
+        description:`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
+
     }
 
 ]

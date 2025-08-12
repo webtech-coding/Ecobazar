@@ -27,6 +27,7 @@ const RootLayout=()=> {
 
   return(
     <Provider store={store}>
+      
       <Stack 
         screenOptions={{headerShown:false}} 
       />

@@ -47,6 +47,12 @@ export type TopSalesPropsType={
     index:number
 }
 
+export interface ICart{
+    productId:number,
+    amount:number,
+    
+}
+
 export type TabrBarIconPropsType={
     focused:boolean,
     icon:'home'|'bag'| 'person' | 'search',

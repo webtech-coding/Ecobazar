@@ -1,11 +1,13 @@
 import { icons } from "@/utils/constants"
 import { TopSalesPropsType } from "@/utils/types"
+import { useRouter } from "expo-router"
 import { FC, ReactElement } from "react"
 import { Image, Pressable, Text, View } from "react-native"
 
 const TopSales:FC<TopSalesPropsType> =({product, index}):ReactElement=>{
+    const router = useRouter()
     return(
-        <Pressable className={`w-[48%] h-80 justify-end items-center mb-5 bg-[#ffffff] rounded-lg ${index % 2 ?'ml-2':'mr-2'}`}>
+        <Pressable className={`w-[48%] h-80 justify-end items-center mb-5 bg-[#ffffff] rounded-lg ${index % 2 ?'ml-2':'mr-2'}`} onPress={()=>router.navigate({pathname:'/product', params:{productId:product.id}},)}>
             <View className="w-full justify-center">
                 <Image source={product.icon} className="size- w-full" resizeMode="contain"/>  
                 <View className="pb-5 flex-row w-full justify-between pl-2 pr-2">
@@ -17,8 +19,8 @@ const TopSales:FC<TopSalesPropsType> =({product, index}):ReactElement=>{
                                 (()=>{
                                     return [1,2,3,4,5].map(num=>{
                                         return(
-                                            <View>
-                                                <Image source={icons.star} key={`start-${num}`} className="size-4" tintColor={num<=product.rating ?'#FE8C00':'#cccccc'}/>
+                                            <View key={`start-${num}`} >
+                                                <Image source={icons.star} className="size-4" tintColor={num<=product.rating ?'#FE8C00':'#cccccc'}/>
                                             </View>
                                         )
                                     })
