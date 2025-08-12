@@ -1,7 +1,13 @@
+import { RootState } from "@/store";
 import { icons } from "@/utils/constants";
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { useRouter } from "expo-router";
+import { Image, Pressable, Text, TouchableOpacity, View } from "react-native";
+import { useSelector } from "react-redux";
 
 const Header =()=>{
+    const store = useSelector((state:RootState)=>state.cart);
+    const router = useRouter()
+    
     return(
         <View className="border-b border-[#ebe9e9]">
             <View className="flex-row justify-between p-3">
@@ -12,9 +18,9 @@ const Header =()=>{
                 <View className="flex-row items-center">
                     <View className="flex-row items-center  mr-5">
                         <Image source={icons.bag} className="size-5" tintColor="#202020"/>
-                        <View className="absolute -top-2 bg-primary h-5 w-5 rounded-full items-center justify-center -right-3">
-                            <Text className="text-white">0</Text>
-                        </View>
+                        <Pressable className="absolute -top-2 bg-primary h-5 w-5 rounded-full items-center justify-center -right-3" onPress={()=>router.navigate('/cart')}>
+                            <Text className="text-white">{store.cart.length}</Text>
+                        </Pressable>
                     </View>    
                     <Text className=" mr-5 ml-2">|</Text>  
                     <TouchableOpacity className="flex-row items-center bg-primary pr-2 pl-2 pt-1 pb-1 rounded-md ml-2" >

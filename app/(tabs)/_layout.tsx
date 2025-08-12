@@ -1,8 +1,9 @@
-import TabBarIcon from '@/components/tabIcon';
+import Header from '@/components/header';
 import { AppDispatch, RootState } from '@/store';
 import { fetchUserSession } from '@/store/asyncActions/userActions';
-import { Redirect, Tabs } from "expo-router";
+import { Redirect, Slot } from "expo-router";
 import { useEffect } from 'react';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { useDispatch, useSelector } from 'react-redux';
 
 const TabLayout =()=>{
@@ -18,6 +19,17 @@ const TabLayout =()=>{
         return <Redirect href='/signin' />
     }
 
+    return(
+        <SafeAreaProvider>
+            <SafeAreaView>
+                <Header />
+                <Slot />
+            </SafeAreaView>
+        </SafeAreaProvider>
+       
+    )
+
+    {/*
     return(
         <Tabs screenOptions={{
             headerShown:false, 
@@ -83,7 +95,7 @@ const TabLayout =()=>{
             />
         </Tabs>
         
-    )
+    )*/}
 }
 
 export default TabLayout;
