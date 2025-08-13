@@ -10,8 +10,8 @@ Ecobazar is a mock app for an imaginary online shop of an organic fresh food.
    - expo-route for navigation
 
 ## UI/UX
-![Project Screenshot](src/assets/screenshots/sign-in.png)
-![Project Screenshot](src/assets/screenshots/front.png)
-![Project Screenshot](src/assets/screenshots/listing.png)
-![Project Screenshot](src/assets/screenshots/product.png)
-![Project Screenshot](src/assets/screenshots/cart.png)
+![Project Screenshot](assets/screenshots/sign-in.png)
+![Project Screenshot](assets/screenshots/front.png)
+![Project Screenshot](assets/screenshots/listing.png)
+![Project Screenshot](assets/screenshots/product.png)
+![Project Screenshot](assets/screenshots/cart.png)
