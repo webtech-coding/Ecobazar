@@ -1,11 +1,13 @@
-import { RootState } from "@/store";
+import { AppDispatch, RootState } from "@/store";
+import { singoutUser } from "@/store/asyncActions/userActions";
 import { icons } from "@/utils/constants";
 import { useRouter } from "expo-router";
 import { Image, Pressable, Text, TouchableOpacity, View } from "react-native";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const Header =()=>{
     const store = useSelector((state:RootState)=>state.cart);
+    const dispatch = useDispatch<AppDispatch>()
     const router = useRouter()
     
     return(
@@ -23,8 +25,8 @@ const Header =()=>{
                         </Pressable>
                     </View>    
                     <Text className=" mr-5 ml-2">|</Text>  
-                    <TouchableOpacity className="flex-row items-center bg-primary pr-2 pl-2 pt-1 pb-1 rounded-md ml-2" >
-                    <Image source={icons.person} tintColor="#ffffff" className="size-4" />
+                    <TouchableOpacity className="flex-row items-center bg-primary pr-2 pl-2 pt-1 pb-1 rounded-md ml-2" onPress={()=>dispatch(singoutUser())}>
+                        <Image source={icons.person} tintColor="#ffffff" className="size-4" />
                         <Text className="text-sm text-white-100 font-medium ml-2">
                             Sign out
                         </Text>

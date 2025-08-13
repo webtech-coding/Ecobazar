@@ -1,5 +1,5 @@
 import { AppDispatch } from "@/store"
-import { addProduct, removeProduct } from "@/store/slices/cart.slice"
+import { addProduct, deleteProduct, removeProduct, } from "@/store/slices/cart.slice"
 import { deals, icons } from "@/utils/constants"
 import { ICart } from "@/utils/types"
 import { FC } from "react"
@@ -20,8 +20,8 @@ const CartItem:FC<CartItemPropType> =({item})=>{
             <View className="flex-col">
                 <Image source={product?.icon} className="h-20 w-20"/>
                 <View className="justify-center p--[10]">
-                    <Text className="text-xs font-semibold">{product?.name}</Text>
-                    <Text className="text-xs">${product.price } / kg</Text>
+                    <Text className="text-l font-semibold">{product?.name}</Text>
+                    <Text className="text-sm font-semibold">${product.price } / kg</Text>
                 </View>
             </View>
             <View>
@@ -37,7 +37,7 @@ const CartItem:FC<CartItemPropType> =({item})=>{
                     <Text className="text-white-100 font-extrabold"> + </Text>
                 </TouchableOpacity>  
             </View>
-            <TouchableOpacity className="p-[10] border border-[#e63946] rounded-md ">
+            <TouchableOpacity className="p-[10] border border-[#e63946] rounded-md" onPress={()=>dispatch(deleteProduct(item.productId))}>
                 <Image source={icons.trash} className="size-6"/>
             </TouchableOpacity>
         </View>
