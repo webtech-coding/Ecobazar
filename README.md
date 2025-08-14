@@ -8,6 +8,7 @@ Ecobazar is a mock app for an imaginary online shop of an organic fresh food.
    - Native wind for styling
    - AppWrite for authentication
    - expo-route for navigation
+   - Redux toolkit for state managements
 
 ## UI/UX
 ![Project Screenshot](assets/screenshots/sign-in.png)
