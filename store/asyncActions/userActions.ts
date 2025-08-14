@@ -15,7 +15,6 @@ const fetchUserSession= createAsyncThunk('user/fetchSession', async (_, {rejectW
 const singoutUser = createAsyncThunk('user/deleteSession', async(_,{rejectWithValue})=>{
     try {
         const sessionState = await deleteUserSession()
-        console.log(sessionState)
         return sessionState
     } catch (error:any) {
         rejectWithValue(error.message)

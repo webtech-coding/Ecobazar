@@ -7,7 +7,6 @@ import { useSelector } from "react-redux";
 
 const AuthLayout=()=>{
     const user = useSelector((state:RootState)=>state.user);
-    console.log(user)
     if(user.isAuthenticated && !user.isLoading)return <Redirect href="/" />
 
     return(
